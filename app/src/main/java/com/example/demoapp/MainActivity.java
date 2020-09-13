@@ -1,13 +1,13 @@
 package com.example.demoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
+    ViewPager viewPager;
+    ArrayList<Integer> arrayListViewPager;
     TextView tvMonth;
     GridView gridView;
     ArrayAdapter arrayAdapter;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         AnhXa();
+        InitDataMonth();
 
 
 
@@ -33,7 +36,24 @@ public class MainActivity extends AppCompatActivity {
         gridView.setAdapter(arrayAdapter);
     }
 
+    private void InitDataMonth() {
+        arrayListViewPager = new ArrayList<Integer>();
+        arrayListViewPager.add(1,R.layout.activity_main);
+        arrayListViewPager.add(2,R.layout.activity_main);
+        arrayListViewPager.add(3,R.layout.activity_main);
+        arrayListViewPager.add(4,R.layout.activity_main);
+        arrayListViewPager.add(5,R.layout.activity_main);
+        arrayListViewPager.add(6,R.layout.activity_main);
+        arrayListViewPager.add(7,R.layout.activity_main);
+        arrayListViewPager.add(8,R.layout.activity_main);
+        arrayListViewPager.add(9,R.layout.activity_main);
+        arrayListViewPager.add(10,R.layout.activity_main);
+        arrayListViewPager.add(11,R.layout.activity_main);
+        arrayListViewPager.add(12,R.layout.activity_main);
+    }
+
     private void AnhXa() {
+        viewPager = findViewById(R.id.viewPager);
         tvMonth = findViewById(R.id.tv_Month);
         gridView = findViewById(R.id.grv_Date);
     }
